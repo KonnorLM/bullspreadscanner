@@ -10,6 +10,14 @@ MIN_SCORE = 75
 BATCH_SIZE = 10
 SLEEP_BETWEEN_BATCHES = 600
 
+def send_discord_startup():
+    msg = "✅ **Bull Spread Scanner has started** and is monitoring the S&P 500..."
+    requests.post(WEBHOOK, json={"content": msg})
+
+def main():
+    send_discord_startup()  # 🔹 SEND STARTUP MESSAGE
+    tickers = get_sp500_tickers()
+
 def get_sp500_tickers():
     r = requests.get("https://datahub.io/core/s-and-p-500-companies/r/constituents.csv")
     return pd.read_csv(pd.compat.StringIO(r.text))['Symbol'].tolist()
