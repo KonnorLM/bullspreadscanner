@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO_URL="https://github.com/YOUR_USERNAME/bullspread.git"
+REPO_URL="https://github.com/KonnorLM/bullspreadscanner.git"
 PROJECT_NAME="bullspread"
 IMAGE_NAME="spreadscanner"
 CONTAINER_NAME="spreadbot"
